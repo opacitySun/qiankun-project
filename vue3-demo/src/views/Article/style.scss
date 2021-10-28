@@ -1,0 +1,81 @@
+@import '@src/styles/mixin.scss';
+
+.articleList{
+  width: 100%;
+  padding: 20px 20px;
+  position: relative;
+
+  &::before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    display: block;
+    background: #333;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50% , 0);
+  }
+
+  &::after{
+    @include clearfix;
+  }
+
+  .item{
+    width: 100%;
+    margin-bottom: 20px;
+
+    .box{
+      width: calc(50% - 30px);
+      border-radius: 50%;
+      border: 3px solid #333;
+      padding: 15px 15px;
+      position: relative;
+      font-size: 0;
+
+      &::after{
+        content: "";
+        padding-top: 100%;
+        display: block;
+      }
+
+      h6{
+        width: 100%;
+        line-height: 1.4;
+        font-size: 16px;
+        text-align: center;
+        color: #333;
+      }
+
+      p{
+        line-height: 1.5;
+        width: 100%;
+
+        &.time{
+          text-align: right;
+          font-size: 12px;
+          color: #999;
+        }
+
+        &.desc{
+          text-align: right;
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+
+    &:nth-child(odd){
+      .box{
+        float: left;
+      }
+    }
+
+    &:nth-child(even){
+      .box{
+        float: right;
+      }
+    }
+  }
+}
