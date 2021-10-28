@@ -1,0 +1,10 @@
+@mixin bgImgFull ($src) {
+  background: url($src) no-repeat;
+  background-size: 100% 100%;
+}
+
+@mixin clearfix {
+  content: "";
+  display: block;
+  clear: both;
+}

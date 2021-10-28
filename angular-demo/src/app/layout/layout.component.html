@@ -1,0 +1,11 @@
+<div 
+    *ngIf="rerender"
+    [ngClass]="{'layout':true}"
+>
+    <div class="layout-header">
+        111
+    </div>
+    <div class="layout-content" id="layoutContent">
+        <router-outlet></router-outlet>
+    </div>
+</div>
